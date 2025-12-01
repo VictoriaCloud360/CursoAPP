@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CursoAPP - Tu Mentor de Cursos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      /* Custom scrollbar for better aesthetics */
+      ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f5f9; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #cbd5e1; 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8; 
+      }
+
+      /* Print Styles for Export */
+      @media print {
+        /* Hide global UI elements */
+        header, nav, .no-print {
+          display: none !important;
+        }
+        
+        /* Reset main containers to ensure full height printing */
+        body, #root, main, .overflow-y-auto {
+          height: auto !important;
+          overflow: visible !important;
+          background: white !important;
+        }
+
+        /* Adjust course view container */
+        .course-container {
+          box-shadow: none !important;
+          border-radius: 0 !important;
+        }
+
+        /* Force all modules to be visible regardless of active tab */
+        .course-module-content {
+          display: block !important;
+          page-break-after: always;
+          margin-bottom: 2rem;
+        }
+
+        /* Ensure text is readable */
+        body {
+          color: black !important;
+        }
+        
+        /* Hide dev tools if active */
+        .dev-tools {
+          display: none !important;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-markdown": "https://aistudiocdn.com/react-markdown@^10.1.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-50 text-slate-900">
+    <div id="root"></div>
+  </body>
+</html>
